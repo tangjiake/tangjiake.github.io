@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<!--<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">-->
+<head>
+	<title>宝贝儿，生日快乐</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body bgcolor = #FAF0E6>
+	<audio src="bgm/bgm.mp3" loop="true" autoplay></audio>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span >宝贝儿，生日快乐~</span><br />
+				<span />请让我再这么叫你一次。<span  ></span><br />
+				<span />宝贝儿，我爱你！<span  ></span><br />
+				<span />今天是你生日，但我不曾想过，<span  ></span><br />
+				<span />我们之间会变成这样。<span  ></span><br />
+				<span />我们曾经说好的，<span  ></span><br />
+				<span />开学的时候，我会帮你补过生日，<span  ></span><br />
+				<span />一起换手机贴膜，一起用情侣手机壳，<span  ></span><br />
+				<span />一起穿情侣衫，一起去哈尔滨旅游，<span  ></span><br />
+				<span />一起锻炼身体，一起度过大学最后一年。<span  ></span><br />
+				<span />我和你一起努力，然后考上清华。<span  ></span><br />
+				<span />你和我一起加油，变成一只胖纸。<span  ></span><br />
+				<span />但是这一切都没来得及去做。<span  ></span><br />
+				<span />现在有这么一个机会，<span  ></span><br />
+				<span />谢谢你给的这次机会<span  ></span><br />
+				<span />让我有机会来完成这些没来得及做的事情。<span  ></span><br />
+				<span />无论以后我们怎样，<span  ></span><br />
+				<span />这个网页我会一直保留着，<span  ></span><br />
+				<span />你也会记着有这样一个男生，<span  ></span><br />
+				<span />曾经这样爱着你。<span  ></span><br />
+				<span />接下来的时间，<span  ></span><br />
+				<span />我会陪着你度过大学里最难熬的时间，<span  ></span><br />
+				<span />帮你实现你的清华梦！<span  ></span><br />
+				<span />加油，宝贝儿！<span  ></span><br />
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						宝贝儿，我们在一起已经有
+						<div id="elapseClock"></div>
+						 <div id="tips"> 很开心我能够重新启动这段时间。</div>
+					</div>
+					<div id="loveu" >
+					<a href="pictures.html">
+							I love U(看完再戳我哦)</a><br/>
+						<div class="signature">- Jay</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="copyright">
+			752377627@qq.com<br>			
+			</div>
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2014,7,4);
+		together.setHours(0);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 6000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
